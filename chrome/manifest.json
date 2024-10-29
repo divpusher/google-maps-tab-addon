@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Google maps tab in search",
+  "version": "0.1",
+  "description": "A simple Chrome extension to bring back Google Maps tab in search results in your language.",
+  "permissions": [
+    "activeTab"
+  ],
+  "icons": {
+    "96": "icons/icon-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/search*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["translations.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
